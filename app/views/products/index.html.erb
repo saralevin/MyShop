@@ -1,0 +1,12 @@
+<p>hello! you are in the index action!</p>
+<ul>
+	<% @products.each do |product| %>
+		<li class="indexLi">
+			<% link_to path,article_path(product) do%>
+			 	<img class="indexImage" url="example.jpg" alt="cloth"/>
+			<%end%>
+			 	<p class="indexDiscription">%= product.discription %</p>
+			 	<p class="indexPrice" >%= product.price %</p>
+		</li>
+	<%end%>
+</ul>

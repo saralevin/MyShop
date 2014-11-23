@@ -1,0 +1,33 @@
+<%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+  
+  <% end %>
+  <p>Name
+    <%= f.Name :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>Description
+    <%= f.Description :text %><br>
+    <%= f.text_field :text %>
+  </p>
+ 
+ <p>Price
+    <%= f.Price, :text %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>Thumbnail
+    <%= f.Thumbnail :text %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>Image
+    <%= f.Image :text %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
