@@ -1,0 +1,65 @@
+
+<html>
+<head>
+  <title>Shop</title>
+</head>
+<body>
+<header>
+	<h1>SHOPPING BAG</h1>
+</header>
+<article class="article">
+	<table>
+	<tr>
+		<th id="thItemInfo">Item Information</th>
+		<th id="thQty">Qty</th>
+		<th id="thPrice">Price</th>
+		<th id="thRemove">Remove</th>
+	</tr>
+	<% @carts.each do |cart| %>
+		<tr class="trItem">
+			<td>
+				<div class="divItemInfo" >
+					<img class="imgItem" src="/home/tzipora/shop/app/assets/Images/1.jpg" alt="picitem1"/>
+					<div class="ItemInfoDivText">
+						<p class="ItemInfoText"><%= cart.users_id %></p>
+						<p class="ItemInfoId">664-179-G79</p>
+					</div>
+				</div>
+			</td>
+			<td><input type="number" style="width:50px"/></td>
+			<td><span>53$</span></td>
+			<td><input type="checkbox" checked="checked"  /> </td>
+		</tr>
+	<!-- 	<tr>
+			<td id="SummaryText">
+				<p>Sub Total</p>
+				<p>Shipping Charge</p>
+				<p>Total</p>
+			</td>
+			<td id="SummaryDetails">
+				<p>95$</p>
+				<p>0$/p>
+				<p>95$</p>
+			</td>
+		</tr> -->
+<% end %>
+	</table>
+	<section>
+			<div id="SummaryText">
+				<span>Sub Total</span><br/>
+				<span>Shipping Charge</span><br/>
+				<span class="SummaryToatal">Total</span>
+			</div>
+			<div id="SummaryDetails">
+				<span>95$</span><br/>
+				<span>0$</span><br/>
+				<span  class="SummaryToatal">95$</span>
+			</div>
+	</section>
+</article>
+<nav class="nav">
+	<input id="bCheck" type="botton" value="go to...."/>
+	<input id="bCont" type="botton" value="go to...."/>
+</nav>
+</body>
+</html>
