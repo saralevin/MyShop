@@ -1,9 +1,9 @@
 class CreateCartItems < ActiveRecord::Migration
   def change
      create_table :cart_items do |t|
-    	 t.references :carts
-    	 t.references :products
-    	 #צריך להוסיף שדהה כמות
+    	 t.references :cart  ,null: false, index: true
+    	 t.references :product,  null: false, index: true
+    	 t.integer :quantity,  default: 1, null: false
          t.timestamps
     end
   end

@@ -15,13 +15,13 @@
 		<th id="thPrice">Price</th>
 		<th id="thRemove">Remove</th>
 	</tr>
-	<% @carts.each do |cart| %>
+	<% @cartsitems.each do |cart| %>
 		<tr class="trItem">
 			<td>
 				<div class="divItemInfo" >
 					<img class="imgItem" src="/home/tzipora/shop/app/assets/Images/1.jpg" alt="picitem1"/>
 					<div class="ItemInfoDivText">
-						<p class="ItemInfoText"><%= cart.users_id %></p>
+						<p class="ItemInfoText"><%= cartsitems.product.description %></p>
 						<p class="ItemInfoId">664-179-G79</p>
 					</div>
 				</div>

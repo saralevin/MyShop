@@ -1,6 +1,9 @@
 class CartController < ApplicationController
 def index
- @carts = Cart.all 
- 
+ @rr = User.all
+ p '================================'
+ p @rr
+  @cartsitems = CartItems.all 
+  #find(params[1])
 end
 end
