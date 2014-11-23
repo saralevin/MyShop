@@ -1,3 +1,3 @@
- dclass Product < ActiveRecord::Base
-	# has_many :carts , dependent: :destroy
+class Product < ActiveRecord::Base
+	
 end
