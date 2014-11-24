@@ -1,13 +1,16 @@
-<img class="bigImage" url="example.jpg" alt"product"/>
+
+<div>
+<%= image_tag(@product.thumbnail, :alt=>'product', :class => 'bigImage')%>
+</div>
 <div class="showDetails">
-	<p><%= @product.discroption %></p>
-	<p class="showPrice"><%= @product.price %></p>
+	<div><p><%= @product.description %></p></div>
+	<div class="showPrice"><p><%= @product.price %></p></div>
 	<p>Quantity:</p>
 	<imput type="text"/>
 	<div class="addButton">
 		<img url="" alt"add to bag"/>
 	</div>
 	<div>
-		<p><% @product.note%></p>
+		<p><% @product.description%></p>
 	</div>
 </div>
