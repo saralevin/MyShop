@@ -16,10 +16,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :products
 
-    resources :product 
-      resources :cart 
-        resources :cart_item 
-           resources :user 
+    resources :cart 
+    resources :cart_item 
+    resources :user 
 
 
   # Example resource route with options:
