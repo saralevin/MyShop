@@ -2,9 +2,12 @@ class CartController < ApplicationController
 def index
   @cart =Cart.find_by user_id: 1
   @cartsitems = CartItem.where("cart_id = ?", @cart.id)
-  @SubTotal =@cartsitems.sum(:price)
-  @ShoppingCharge =0
-  @Total =0
+    @SubTotal = 0
+    @cartsitems.each do |item|
+            @SubTotal += item.product.price* item.quantity
+    end 
+  @ShoppingCharge =20
+  @Total = @SubTotal+@ShoppingCharge
 end
 
 def destroy

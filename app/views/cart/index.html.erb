@@ -21,16 +21,18 @@
 				<div class="divItemInfo" >
 					<%= image_tag(cartsitem.product.thumbnail, class: "imgItem") %>
 					<div class="ItemInfoDivText">
-						<p class="ItemInfoText"><%= cartsitem.product.description %></p>
+						 <p class="ItemInfoText"><%= cartsitem.product.description %></p> 
 						<p class="ItemInfoId"><%= cartsitem.product.code %></p>
 					</div>
 				</div>
 			</td>
-			<td><input type="number" style="width:50px"/></td>
+			<td><!-- <input type="number" style="width:50px"/> -->
+			<%= number_field_tag "aaa", cartsitem.quantity,in: 1...10 %></td>
 			<td><span><%= cartsitem.product.price %></span></td>
-			<td><input type="checkbox" checked="checked"  />
+			<td>
 			<%= link_to image_tag("x.png"), cart_path(cartsitem),
-                    method: :delete, data: { confirm: 'האם אתה בטוח?' } %> </td>
+                    method: :delete, data: { confirm: 'האם אתה בטוח?' } %> 
+                    </td>
 		</tr>
 
 <% end %>
@@ -50,12 +52,9 @@
 </article>
 <nav class="nav">
 
- <%= link_to image_tag("GoTo.png"), {controller: 'product'}, :id => "bCheck" %>
+ <%= link_to image_tag("GoTo.png"), products_path, :id => "bCheck" %>
  <br/>
-	<%= link_to image_tag("Cont.png"), {controller: 'user',action: 'edit'}, :id => "bCont" %>
-   
-
-
-</nav>
+	<%= link_to image_tag("Cont.png"),  edit_user_path(@cartsitems[0].cart)  , :id => "bCont" %>
+ </nav>
 </body>
 </html>
