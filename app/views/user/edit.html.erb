@@ -1,5 +1,59 @@
 
-<html>
+<header>
+	<h1>Checkout:
+	<span>Shopping address</span>
+	</h1>
+	<span>Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
+</header>
+<%= form_for @user do |f| %>
+<%= f.select :city, options_for_select([["Jerusalem"],[ "Bene Beraq"], ["Tel Aviv"],[ "Yafo"]]) %>
+  <p>
+    <%= f.label :first_name %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+ <p>
+ 	<%= f.label :"street address" %><br/>
+ 	<%= f.text_field :address1  %><br/>
+ 	<%= f.text_field :address2  %>
+ </p>
+   <p>
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </p>
+    <p>
+    <%= f.label :state %><br/>
+    <%= f.text_field :state %>
+  </p>  
+  <p>
+    <%= f.label :zip %><br/>
+    <%= f.text_field :zip %>
+  </p>
+     <p>
+    <%= f.label "phone " %><br/>
+    <%= telephone_field(:user, :phone) %>
+
+  </p>   
+    <p>
+    <%= f.label "phone " %><br/>
+    <%= email_field(:user, :email) %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<!-- .string :city ,      limit: 45
+      t.string :state ,      limit: 45
+      t.string :country ,      limit: 45
+      t.integer :zip 
+      t.string :phone ,      limit: 45
+      t.string :email -->
+<!-- <html>
 <head>
   <title>Shop</title>
 </head>
@@ -19,4 +73,4 @@
 </article>
 
 </body>
-</html>
+</html> -->
