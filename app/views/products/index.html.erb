@@ -2,11 +2,9 @@
 <ul>
 	<% @products.each do |product| %>
 		<li class="indexLi">
-			<% link_to path,article_path(product) do%>
-			 	<img class="indexImage" url="example.jpg" alt="cloth"/>
-			<%end%>
-			 	<p class="indexDiscription">%= product.discription %</p>
-			 	<p class="indexPrice" >%= product.price %</p>
+			<%= link_to image_tag(product.thumbnail, :class => 'indexImage'), url_for({ :action => 'show', :id => product.id}) %>
+			 <p class="indexDiscription"><%= product.description %></p>
+			 <p class="indexPrice" ><%= product.price %></p>
 		</li>
 	<%end%>
 </ul>

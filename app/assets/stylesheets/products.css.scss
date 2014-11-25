@@ -1,3 +1,55 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ol, ul {
+    list-style: none outside none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+body div{
+	float:left;
+}
+
+.indexLi{
+	padding:12px;
+	float:left;
+	font-size:10pt;
+	font-family:arial;
+}
+
+.indexImage{
+	width:145px;
+	height:216px;
+}
+
+.indexPrice{
+	font-width:bolder;
+}
+
+.bigImage{
+	margin:10px;
+	height:458px;
+	width:308px;
+	border-style: solid;
+    border-width: 1px;
+	border-color:Gray;
+}
+
+.showDetails{
+	margin:10px 10px 10px 100px;
+	float:left;
+}
+
+.showPrice{
+	float:right;
+
+}
