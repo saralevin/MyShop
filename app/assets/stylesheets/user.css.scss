@@ -1,3 +1,80 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+color:rgb(69, 70, 68);;
+
+font-family: "padauk book";
+width: 966px;
+height: 400px;
+margin: auto;
+adding: 3px 5px 4px 20px;
+}
+h1{
+	font-size: 27px;
+}
+#spancheckout {
+font-weight: bold;;
+}
+#spanPlease{
+	font-size: 12px;
+}
+#sectiondetails{
+	float:left
+}
+p{
+	margin: 6px 10px 0px 10px;
+}
+#pfname, #pcity{
+	float:left;
+}
+input ,select{
+	height: 22px;
+}
+
+#paddress input{
+
+width: 432px;
+}
+#paddress input:nth-child(5){
+margin-top: 8px;
+
+}
+#pcountry select{
+	width: 293px;
+}
+#plname input, #pfname input{
+width: 209px;
+}
+#pphone input {
+	width: 159px;
+}
+#pzip input {
+	width: 109px;
+}
+#pemail input {
+	width: 323px;
+}
+#pphone span ,#pemail span {
+	font-size: 11px;
+color: rgb(178, 178, 178);
+}
+#sectioncont{
+	float:right;
+}
+#divsubtotal{
+width: 262px;
+height: 66px;
+	float: none;
+background-image: -webkit-linear-gradient(top ,rgb(237, 237, 237) 0%, rgb(253, 253, 253) 100%);
+border-top: 3px solid rgb(160, 160, 160);
+border-bottom: 3px solid rgb(239, 239, 239);
+}
+#sectioncont p{
+	font-size: 11px;
+margin: 0px;
+}
+#sectioncont p:nth-child(2){
+color: rgb(48, 101, 207);
+}

@@ -2,11 +2,12 @@ class UserController < ApplicationController
 
   def edit
   	 @cart = Cart.find(params[:id])
-  	 p"^^^^^^^^^^^^^^^^^^^^^^^^"
-p @cart
-p @cart.user_id
    @user = User.find(@cart.user_id)
-   p @user
+   @cartsitems = CartItem.where("cart_id = ?", @cart.id)
+  @SubTotal = 0
+    @cartsitems.each do |item|
+            @SubTotal += item.product.price* item.quantity
+    end 
   end
 
   def update

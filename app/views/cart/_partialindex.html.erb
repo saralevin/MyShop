@@ -1,0 +1,23 @@
+	<% @cartsitems.each do |cartsitem| %>
+		<tr class="trItem">
+			<td>
+				<div class="divItemInfo" >
+					<%= image_tag(cartsitem.product.thumbnail, class: "imgItem") %>
+					<div class="ItemInfoDivText">
+						 <p class="ItemInfoText"><%= cartsitem.product.description %></p> 
+						<p class="ItemInfoId"><%= cartsitem.product.code %></p>
+					</div>
+				</div>
+			</td>
+			<td><!-- <input type="number" style="width:50px"/> -->
+			<%= number_field_tag "aaa", cartsitem.quantity,in: 1...10 %></td>
+			<td><span><%= cartsitem.product.price %></span></td>
+			<td>
+			<%= link_to image_tag("x.png"), cart_path(cartsitem),
+                    method: :delete, data: { confirm: 'האם אתה בטוח?' } ,:remote=>true %> 
+
+                    <!-- cart_path(cartsitem) -->
+                    </td>
+		</tr>
+
+<% end %>

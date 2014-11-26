@@ -1,76 +1,72 @@
-
+<body>
 <header>
-	<h1>Checkout:
+	<h1><span id ="spancheckout">Checkout:</span>
 	<span>Shopping address</span>
 	</h1>
-	<span>Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
+	<spann id="spanPlease">Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
 </header>
 <%= form_for @user do |f| %>
-<%= f.select :city, options_for_select([["Jerusalem"],[ "Bene Beraq"], ["Tel Aviv"],[ "Yafo"]]) %>
-  <p>
-    <%= f.label :first_name %><br/>
+<section id="sectiondetails">
+  <p id ="pcountry">
+	<span>Country or region</span><br/>
+	<%= f.select :city, options_for_select([["Afghanistan"],
+["Albania"],["Algeria"],["Andorra"],["Angola"],["Antigua and Barbuda"],["Argentina"],["Armenia"],["Aruba"],["Australia"],["Austria"],["Azerbaijan"],
+["Iceland"],["India"],["Indonesia"],["Iran"],["Iraq"],["Ireland"],["Israel"],["Italy"]]) %>
+  </p>
+  <p id="pfname">
+    <%= f.label :first_name  %><br/>
     <%= f.text_field :first_name %>
   </p>
  
-  <p>
+  <p id="plname">
     <%= f.label :last_name %><br/>
     <%= f.text_field :last_name %>
   </p>
- <p>
+ <p id="paddress">
  	<%= f.label :"street address" %><br/>
  	<%= f.text_field :address1  %><br/>
  	<%= f.text_field :address2  %>
  </p>
-   <p>
+   <p id="pcity">
     <%= f.label :city %><br/>
     <%= f.text_field :city %>
   </p>
-    <p>
+    <p id="pstate">
     <%= f.label :state %><br/>
     <%= f.text_field :state %>
   </p>  
-  <p>
-    <%= f.label :zip %><br/>
+  <p id="pzip">
+ 
+   <label>ZIP code</label><br/>
     <%= f.text_field :zip %>
   </p>
-     <p>
-    <%= f.label "phone " %><br/>
+     <p id="pphone">
+    <%= f.label "Phone number" %><br/><span>This will only be used if there are shipping questions</span><br/>
     <%= telephone_field(:user, :phone) %>
 
   </p>   
-    <p>
-    <%= f.label "phone " %><br/>
+    <p id="pemail">
+    <%= f.label "Email address " %><br/>
+    <span>We'll email you an order confirmation</span>
+    <br/>
     <%= email_field(:user, :email) %>
   </p>
-  <p>
-    <%= f.submit %>
+
+</section>
+<section id="sectioncont">
+
+<p>How do yow like our new checkout</p>
+<p>Tell us what yow think</p>
+<div id="divsubtotal">
+<span>SubTotal</span>
+<span><%= @SubTotal %></span><br/>
+<span>covered by </span>
+<span>eBay Buyer Protection</span>
+</div><br/>
+<p>Continue to review your order</p>
+    <p>
+      <%= f.submit "", :type => :image, :src => "/assets/Continue.png" %>
   </p>
+</section>
 <% end %>
-
-<!-- .string :city ,      limit: 45
-      t.string :state ,      limit: 45
-      t.string :country ,      limit: 45
-      t.integer :zip 
-      t.string :phone ,      limit: 45
-      t.string :email -->
-<!-- <html>
-<head>
-  <title>Shop</title>
-</head>
-<body>
-<header>
-	<h1>Checkout:
-	<span>Shopping address</span>
-	</h1>
-	<span>Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
-</header>
-<article class="article">
-<span>Country or region</span>
-<select>
-	<option>Israel</option>
-	<option>USA</option>
-</select>
-</article>
-
 </body>
-</html> -->

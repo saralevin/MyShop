@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+   # respond_to :html, :js
 def index
   @cart =Cart.find_by user_id: 1
   @cartsitems = CartItem.where("cart_id = ?", @cart.id)
@@ -8,14 +9,19 @@ def index
     end 
   @ShoppingCharge =20
   @Total = @SubTotal+@ShoppingCharge
+  # respond_to do |format|
+  #   format.html
+  #   format.json
+  # end
 end
 
 def destroy
-  @cartsitem = CartItem.find(params[:id])
+   @cartsitem = CartItem.find(params[:id])
   @cartsitem.destroy
-  redirect_to :action => "index"
-  # redirect_to index
-  # articles_path איפה הוא מוגדר ???
+  
+    @cart =Cart.find_by user_id: 1
+  @cartsitems = CartItem.where("cart_id = ?", @cart.id)
+
 end
 def continue
 	redirect_to user
