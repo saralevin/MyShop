@@ -15,11 +15,19 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
 
+# do
+#     resources :cart_item
+#   end
+resources :products do 
+  collection do 
+    post 'create_cart_item'
+    get 'ajax_bought'
+  end
+end
 
-    resources :products 
-      resources :cart 
-        resources :cart_item 
-           resources :user 
+    resources :cart 
+    # resources :cart_item 
+    resources :user 
  get 'usser/end' => 'user#end'
 
   # Example resource route with options:
