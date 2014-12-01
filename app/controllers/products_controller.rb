@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	
+
 
     def index
 		  @products=Product.all
@@ -15,9 +15,9 @@ class ProductsController < ApplicationController
 
     def create_cart_item #create the product line in the cart_item table
       @cart_item=CartItem.new(cart_item_params)
-      @cart_item.cart_id=(Cart.find_by user_id: 1).id
+      @cart_item.cart_id=session[:cart_id]
       if @cart_item.save 
-        redirect_to :controller => 'cart', :action => 'index', :id => 1
+        redirect_to :controller => 'cart', :action => 'index', :id => session[:cart_id]
       else
         redirect_to :action => 'index'
       end
@@ -25,7 +25,6 @@ class ProductsController < ApplicationController
 
 
     def ajax_bought #count how many bought this product
-      p '--------------------------------------------------------------------------------gfgfgffgfghfgfgh'
         @carts_items = CartItem.where("product_id = ?",params[:id] )
         @count=0;
         @carts_items.each do |item|
