@@ -17,11 +17,12 @@ Rails.application.routes.draw do
 
 
     resources :products 
-      resources :cart 
+      resources :cart do
         resources :cart_item 
+      end
            resources :user 
- get 'usser/end' => 'user#end'
-
+   get 'user/end' => 'user#end'
+  post 'cart_item/calculation_price'=>'cart_item#calculation_price'
   # Example resource route with options:
   #   resources :products do
   #     member do

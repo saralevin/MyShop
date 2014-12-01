@@ -1,6 +1,7 @@
 <body>
+<section class='section_1'>
 <header>
-	<h1><span id ="spancheckout">Checkout:</span>
+	<h1 id='h1_user_checkout'><span id ="spancheckout">Checkout:</span>
 	<span>Shopping address</span>
 	</h1>
 	<spann id="spanPlease">Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
@@ -41,31 +42,32 @@
     <%= f.text_field :zip %>
   </p>
      <p id="pphone">
-    <%= f.label "Phone number" %><br/><span>This will only be used if there are shipping questions</span><br/>
+    <%= f.label "Phone number" %><img src="/assets/?.png"><!-- <br/> --><span>This will only be used if there are shipping questions</span><br/>
     <%= telephone_field(:user, :phone) %>
 
   </p>   
     <p id="pemail">
-    <%= f.label "Email address " %><br/>
+    <%= f.label "Email address " %>
     <span>We'll email you an order confirmation</span>
-    <br/>
+     <br/> 
     <%= email_field(:user, :email) %>
   </p>
 
+</section>
 </section>
 <section id="sectioncont">
 
 <p>How do yow like our new checkout</p>
 <p>Tell us what yow think</p>
 <div id="divsubtotal">
-<span>SubTotal</span>
-<span><%= @SubTotal %></span><br/>
-<span>covered by </span>
-<span>eBay Buyer Protection</span>
+<span id='span_sub_total_text'>SubTotal:</span>
+<span id='span_sub_total'><%= @SubTotal %>&#8362;</span><br/>
+<span id='span_covered_by'>Covered by </span>
+<span id='span_ebay'>eBay Buyer Protection</span>
 </div><br/>
 <p>Continue to review your order</p>
     <p>
-      <%= f.submit "", :type => :image, :src => "/assets/Continue.png" %>
+      <%= f.submit "", :type => :image, :src => "/assets/Continue.png",:id=>'button_continue' %>
   </p>
 </section>
 <% end %>

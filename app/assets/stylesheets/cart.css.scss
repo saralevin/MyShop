@@ -11,7 +11,7 @@ body
 	direction: rtl;
 	line-height: 1em;
 	text-align: right;
-}
+}*/
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
 {
 	margin: 0;
@@ -22,6 +22,7 @@ html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockqu
 	vertical-align: baseline;
 	background: transparent;
 }
+/*
 ul 
 {
 	list-style: none;
@@ -52,47 +53,58 @@ table
 
 */
 
-body{
+#body_cart_item_index{
 font-family: "padauk book";
-width: 966px;
+width: 813px;
 height: 400px;
 margin: auto;
-
+padding-left: 20px;
+}
+.section_1{
+float:left;
 }
 
-h1{
-	font-weight: 100;
-margin: 10px 0px 0px 10px;
+#h1_shopping_bag{
+font-size: 31px;
+margin: 14px 0px 11px 5px;
+font-family: 'Ubuntu Light';
 }
+
 .article{
 	float:left;
 }
+
 .trItem{
-
-
 }
+
 .divItemInfo{
-	width: 394px;
-height: 162px;
+width: 261px;
+height: 120px;
 }
+
 .imgItem{
-width: 95px;
-height: 130px;
+width: 62px;
+height: 102px;
 float: left;
-margin: 15px 12px 15px 10px;
+margin: 10px 0px 10px 8px;
 }
+
 .ItemInfoDivText{
-width: 214px;
+width: 182px;
 float: left;
-margin: 15px 14px 0px 0px;
+margin: 7px 0px 0px 0px;
+font-size: 15px;
 }
+
 .ItemInfoText{
 margin-top: 0px;
 font-weight: 800;
 }
+
 .ItemInfoId{
 	
 }
+
 table{
 	border-collapse: collapse;
 	margin-left: 15px;
@@ -101,7 +113,9 @@ table{
 table td,th
 {
     border: 1px solid #A8A8A8;
+   vertical-align: -webkit-baseline-middle;
 }
+
 table th
 {
 text-align: left;
@@ -109,35 +123,62 @@ background-color: #e3dcdc;
 	border-bottom-color: white;
 	padding-left: 6px;
 }
+
+
+
 #thQty{width: 67px;}
-		#thPrice{width: 85px;}
-	#thRemove{width: 67px;}
+
+#thPrice{width: 80px;}
+
+#thRemove{width: 67px;}
+
+.number_field_count{
+	margin-top: 10px;
+    margin-left: 8px;
+	width: 46px;
+	height:16px
+}
+.delete_button img {
+		margin-top: 10px;
+    margin-left: 22px;
+}
+.td_price{
+	padding: 12px 6px 0px 55px;
+}
 #SummaryText{
-	border: 3px solid #5a9334;
+border: 3px solid #5a9334;
 border-right-width: 8px;
-width: 309px;
+width: 220px;
 float: left;
 text-align: right;
 padding-right: 10px;
-margin-left: 15px
+height: 67px;
+font-size: 14px;
 }
-#SummaryDetails{
-	border: 3px solid #5a9334;
+
+#summary_details{
+border: 3px solid #5a9334;
 border-right-width: 0px;
 float: left;
-background-color: rgb(234, 233, 233);
+background-color: #eae9e9;
 text-align: right;
 padding-right: 155px;
-width: 140px;
+width: 104px;
+font-size: 14px;
+height: 67px;
 }
+
 .SummaryToatal{
 	font-weight: bold;
 	font-size: 20px;
 }
+
 .nav{
 width: 281px;
-	float:left;
+margin-top: 21px;
+float: left;
 }
+
 #bCheck{
 width: 171px;
 height: 33px;
@@ -145,11 +186,10 @@ margin-left: 20px;
 margin-top: 10px;
 border: none;
 }
+
 #bCont{
-/*background-image: url(Cont.png);*/
-	width: 171px;
 height: 33px;
-margin-left: 20px;
+margin-left: 23px;
 margin-top: 10px;
 border: none;
 }

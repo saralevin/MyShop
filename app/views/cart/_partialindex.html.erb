@@ -9,12 +9,12 @@
 					</div>
 				</div>
 			</td>
-			<td><!-- <input type="number" style="width:50px"/> -->
-			<%= number_field_tag "aaa", cartsitem.quantity,in: 1...10 %></td>
-			<td><span><%= cartsitem.product.price %></span></td>
+			<td>
+			<%= number_field_tag "", cartsitem.quantity,in: 1...10 ,:class=>'number_field_count'%></td>
+			<td><%= label_tag  cartsitem.product.price %>&#8362;</td>
 			<td>
 			<%= link_to image_tag("x.png"), cart_path(cartsitem),
-                    method: :delete, data: { confirm: 'האם אתה בטוח?' } ,:remote=>true %> 
+                    method: :delete, data: { confirm: 'האם אתה בטוח?' } ,:remote=>true,:class=>'delete_button' %> 
 
                     <!-- cart_path(cartsitem) -->
                     </td>

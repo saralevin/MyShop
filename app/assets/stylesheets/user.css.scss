@@ -9,16 +9,20 @@ font-family: "padauk book";
 width: 966px;
 height: 400px;
 margin: auto;
-adding: 3px 5px 4px 20px;
+padding: 3px 5px 4px 20px;
 }
-h1{
-	font-size: 27px;
+#h1_user_checkout{
+margin: 7px 0px 0px 10px;
+font-size: 24px;
+font-family: "Liberation Serif";
+font-weight: 100;
 }
 #spancheckout {
-font-weight: bold;;
+font-weight: 900;;
 }
 #spanPlease{
 	font-size: 12px;
+	margin-left: 11px;
 }
 #sectiondetails{
 	float:left
@@ -30,12 +34,12 @@ p{
 	float:left;
 }
 input ,select{
-	height: 22px;
+	height: 30px;
 }
 
 #paddress input{
 
-width: 432px;
+width: 480px;
 }
 #paddress input:nth-child(5){
 margin-top: 8px;
@@ -45,7 +49,7 @@ margin-top: 8px;
 	width: 293px;
 }
 #plname input, #pfname input{
-width: 209px;
+width: 233px;
 }
 #pphone input {
 	width: 159px;
@@ -58,23 +62,51 @@ width: 209px;
 }
 #pphone span ,#pemail span {
 	font-size: 11px;
-color: rgb(178, 178, 178);
+color: #b2b2b2;
+display: inherit;
+margin-top: -6px;
+margin-bottom: -22px;
+}
+.edit_user label{
+font-family: 'Ubuntu Light';
+font-size: 15px;
 }
 #sectioncont{
-	float:right;
+float: right;
+text-align: right;
+margin-top: 5px;
 }
 #divsubtotal{
-width: 262px;
-height: 66px;
+padding-right: 11px;
+margin-top: 12px;
+width: 305px;
+height: 61px;
 	float: none;
 background-image: -webkit-linear-gradient(top ,rgb(237, 237, 237) 0%, rgb(253, 253, 253) 100%);
 border-top: 3px solid rgb(160, 160, 160);
 border-bottom: 3px solid rgb(239, 239, 239);
 }
 #sectioncont p{
-	font-size: 11px;
-margin: 0px;
+font-size: 14px;
+margin: -5px;
 }
 #sectioncont p:nth-child(2){
-color: rgb(48, 101, 207);
+color: #3065cf;
+}
+#span_sub_total_text{
+	font-weight: 900;
+
+}
+#span_sub_total{
+font-weight: 900;
+font-size: 22px;
+margin-left: 5px;
+}
+#span_covered_by{font-size: 12px;}
+#span_ebay{
+color: #3065cf;
+font-weight: 900;
+}
+#button_continue{
+	margin-top: 8px;
 }

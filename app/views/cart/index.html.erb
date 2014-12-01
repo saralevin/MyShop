@@ -4,8 +4,9 @@
   <title>Shop</title>
 </head>
 <body>
+<section class="section_1">
 <header>
-	<h1>SHOPPING BAG</h1>
+	<h1 id="h1_shopping_bag">SHOPPING BAG</h1>
 </header>
 <article class="article">
 	<table>
@@ -23,17 +24,18 @@
 	</table>
 	<section>
 			<div id="SummaryText">
-				<span>Sub Total</span><br/>
-				<span>Shopping Charge</span><br/>
+				<span>Sub Total<br/>
+				Shopping Charge</span><br/>
 				<span class="SummaryToatal">Total</span>
 			</div>
 			<div id="SummaryDetails">
-				<span><%= @SubTotal %></span><br/>
-				<span><%= @ShoppingCharge %></span><br/>
-				<span  class="SummaryToatal"><%= @Total %></span>
+				<span><%= @SubTotal %>&#8362;</span><br/>
+				<span><%= @ShoppingCharge %>&#8362;</span><br/>
+				<span  class="SummaryToatal"><%= @Total %>&#8362;</span>
 			</div>
 	</section>
 </article>
+</section>
 <nav class="nav">
 
  <%= link_to image_tag("GoTo.png"), products_path, :id => "bCheck" %>
