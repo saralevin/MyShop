@@ -17,7 +17,8 @@ class ProductsController < ApplicationController
       @cart_item=CartItem.new(cart_item_params)
       @cart_item.cart_id=session[:cart_id]
       if @cart_item.save 
-        redirect_to :controller => 'cart', :action => 'index', :id => session[:cart_id]
+         redirect_to '/cart/'+(session[:cart_id])).to_s+'/cart_item'
+        # redirect_to :controller => 'cart_item', :action => 'index', :id => session[:cart_id]
       else
         redirect_to :action => 'index'
       end

@@ -1,0 +1,69 @@
+<%= javascript_tag do %>
+
+<!-- $(document).ready (function(){
+alert("bbbb")
+	$("[class='number_field_count']").bind('click',function(){
+  alert("הגעתי לקליק");
+		$.ajax({
+		  url: 'cart_item/calculation_price',
+		  data: form.serialize(), 
+		  success:function(s){
+		alert(s)
+		  }
+		    feild: function(data)
+                    {
+                        alert("feild");
+                    }
+		});
+
+	     $("[class='number_field_count']").css('color','red');
+ 
+	});
+		$("[class='number_field_count']").click(function(){alert("change")
+});
+
+	}); -->
+<% end %>
+<html>
+<head>
+  <title>Shop</title>
+</head>
+<body id="body_cart_item_index">
+<section class="section_1">
+<header>
+	<h1 id="h1_shopping_bag">SHOPPING BAG</h1>
+</header>
+<article class="article">
+	<table>
+	<thead>
+	<tr>
+		<th id="thItemInfo">Item Information</th>
+		<th id="thQty">Qty</th>
+		<th id="thPrice">Price</th>
+		<th id="thRemove">Remove</th>
+	</tr>
+	</thead>
+		<tbody id="tbody">
+			<%= render partial: 'partialindex'  %>
+		</tbody>
+	</table>
+	<section>
+			<div id="SummaryText">
+				<span>Sub Total<br/>
+				Shopping Charge</span><br/>
+				<span class="SummaryToatal">Total</span>
+			</div>
+			<div id="summary_details">
+					<%= render partial: 'summary_details'  %>
+			</div>
+	</section>
+</article>
+</section>
+<nav class="nav">
+
+ <%= link_to image_tag("GoTo.png"), products_path, :id => "bCheck" %>
+ <br/>
+	<%= link_to image_tag("Cont.png"),  edit_user_path(@cartsitems[0].cart)  , :id => "bCont" %>
+ </nav>
+</body>
+</html>
