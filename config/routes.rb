@@ -25,21 +25,17 @@ resources :products do
   end
 end
 
-# <<<<<<< HEAD
     resources :products 
-      resources :cart do
-        resources :cart_item 
-      end
-           resources :user 
-   get 'user/end' => 'user#end'
-  # post 'cart_item/calculation_price'=>'cart_item#calculation_price'
-# =======
-    # resources :cart 
-    # resources :cart_item 
-    # resources :user 
- # get 'usser/end' => 'user#end'
+    resources :cart do
+      resources :cart_item 
+    end
+    resources :user 
+    
+  get 'user/end' => 'user#end'
+
 resources :user do 
   collection do 
+    get 'end'
     get 'start'
     post 'start_shopping'
   end
@@ -52,7 +48,7 @@ end
     end
   end
 
-# >>>>>>> c985d714fd78f8f88837d3b8c47d64995f649e59
+
   # Example resource route with options:
   #   resources :products do
   #     member do

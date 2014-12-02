@@ -74,34 +74,34 @@ font-family: 'Ubuntu Light';
 	float:left;
 }
 
-.trItem{
+.tr_item{
 }
 
-.divItemInfo{
+.div_item_info{
 width: 261px;
 height: 120px;
 }
 
-.imgItem{
+.img_item{
 width: 62px;
 height: 102px;
 float: left;
 margin: 10px 0px 10px 8px;
 }
 
-.ItemInfoDivText{
+.item_info_div_text{
 width: 182px;
 float: left;
 margin: 7px 0px 0px 0px;
 font-size: 15px;
 }
 
-.ItemInfoText{
+.item_info_text{
 margin-top: 0px;
 font-weight: 800;
 }
 
-.ItemInfoId{
+.item_info_id{
 	
 }
 
@@ -126,11 +126,11 @@ background-color: #e3dcdc;
 
 
 
-#thQty{width: 67px;}
+#th_qty{width: 67px;}
 
-#thPrice{width: 80px;}
+#th_price{width: 80px;}
 
-#thRemove{width: 67px;}
+#th_remove{width: 67px;}
 
 .number_field_count{
 	margin-top: 10px;
@@ -145,7 +145,7 @@ background-color: #e3dcdc;
 .td_price{
 	padding: 12px 6px 0px 55px;
 }
-#SummaryText{
+#summary_text{
 border: 3px solid #5a9334;
 border-right-width: 8px;
 width: 220px;
@@ -168,7 +168,7 @@ font-size: 14px;
 height: 67px;
 }
 
-.SummaryToatal{
+.summary_toatal{
 	font-weight: bold;
 	font-size: 20px;
 }
@@ -179,7 +179,7 @@ margin-top: 21px;
 float: left;
 }
 
-#bCheck{
+#b_check{
 width: 171px;
 height: 33px;
 margin-left: 20px;
@@ -187,7 +187,7 @@ margin-top: 10px;
 border: none;
 }
 
-#bCont{
+#b_continue{
 height: 33px;
 margin-left: 23px;
 margin-top: 10px;

@@ -14,13 +14,10 @@ class ProductsController < ApplicationController
 
 
     def create_cart_item #create the product line in the cart_item table
-      p '====================================pppp'
       @cart_item=CartItem.new(cart_item_params)
       @cart_item.cart_id=session[:cart_id]
       if @cart_item.save 
-        p '222222222222222===============ppppp'
-         # redirect_to 'cart_cart_item_index'
-          redirect_to :controller => 'cart_item', :action => 'index'
+        redirect_to :controller => 'cart_item', :action => 'index'
       else
         redirect_to :action => 'index'
       end
