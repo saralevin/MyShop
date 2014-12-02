@@ -28,10 +28,8 @@ class ProductsController < ApplicationController
         @carts_items = CartItem.where("product_id = ?",params[:id] )
         @count=0;
         @carts_items.each do |item|
-            @count+=1
+            @count+=item.quantity
         end
-
-        p @count
         render plain: @count
     end
 

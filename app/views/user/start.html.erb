@@ -17,7 +17,10 @@
   </p>   
     <p id="pemail">
     <%= f.label "Email address " %><br/>
+    
     <span>We'll email you an order confirmation</span>
+    <br/>
+    <span style="color:red; font-size:10pt;">this field is required</span>
     <br/>
     <%= email_field(:user, :email) %>
   </p>

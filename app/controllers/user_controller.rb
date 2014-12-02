@@ -7,20 +7,23 @@ class UserController < ApplicationController
   def start_shopping
     @user=User.new(user_params_start)
     @cart=Cart.new()
-    p @user
-    if(User.find_by email: @user.email)
-      @cart.user_id=(User.find_by email: @user.email).id
-      @cart.save
-      session[:cart_id]=@cart.id
-      redirect_to :controller => 'products', :action => 'index'
+    if(@user.email=="")
+      render 'start'
     else
-      if @user.save 
-        @cart.user_id=@user.id
+      if(User.find_by email: @user.email)
+        @cart.user_id=(User.find_by email: @user.email).id
         @cart.save
         session[:cart_id]=@cart.id
         redirect_to :controller => 'products', :action => 'index'
       else
-        redirect_to :action => 'start'
+        if @user.save 
+          @cart.user_id=@user.id
+          @cart.save
+          session[:cart_id]=@cart.id
+          redirect_to :controller => 'products', :action => 'index'
+        else
+          redirect_to :action => 'start'
+        end
       end
     end
   end
