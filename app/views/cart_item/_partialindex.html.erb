@@ -1,0 +1,28 @@
+	<% @cartsitems.each do |cartsitem| %>
+		<tr class="trItem">
+			<td>
+				<div class="divItemInfo" >
+					<%= image_tag(cartsitem.product.thumbnail, class: "imgItem") %>
+					<div class="ItemInfoDivText">
+						 <p class="ItemInfoText"><%= cartsitem.product.description %></p> 
+						<p class="ItemInfoId"><%= cartsitem.product.code %></p>
+					</div>
+				</div>
+			</td>
+			<td>
+		
+			<%= number_field_tag "", cartsitem.quantity,in: 1...10 ,:class=>'number_field_count',:data=> cartsitem.id%>
+			<!-- {:onchange => remote_function(:method => :get, :url => {:action => 'alculation_price'})} -->
+ 
+			</td>
+			<td class="td_price"><%= label_tag  cartsitem.product.price %>&#8362;</td>
+			<td>
+			<%= link_to image_tag("x.png"),  [cartsitem.cart, cartsitem],
+                    method: :delete, data: { 
+                    	confirm: 'האם אתה בטוח?' } ,:remote=>true,:class=>'delete_button' %> 
+
+                    <!-- cart_path(cartsitem) -->
+                    </td>
+		</tr>
+
+<% end %>

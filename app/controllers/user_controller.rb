@@ -32,11 +32,11 @@ class UserController < ApplicationController
   def edit
   	@cart = Cart.find(session[:cart_id])
     @user = User.find(@cart.user_id)
-    @cartsitems = CartItem.where("cart_id = ?", @cart.id)
-    @SubTotal = 0
-    @cartsitems.each do |item|
-            @SubTotal += item.product.price* item.quantity
-    end 
+    # @cartsitems = CartItem.where("cart_id = ?", @cart.id)
+      @SubTotal = session[:SubTotal] 
+      @ShoppingCharge = session[:ShoppingCharge]
+      @Total= @ShoppingCharge+@SubTotal
+   
   end
 
   def update
