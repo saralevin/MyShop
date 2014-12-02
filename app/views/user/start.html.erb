@@ -1,0 +1,26 @@
+<%= form_for @user, :url => {:action => "start_shopping"} do |f| %>
+  <p id ="pcountry">
+	<span>Country or region</span><br/>
+	<%= f.select :city, options_for_select([["Afghanistan"],
+["Albania"],["Algeria"],["Andorra"],["Angola"],["Antigua and Barbuda"],["Argentina"],["Armenia"],["Aruba"],["Australia"],["Austria"],["Azerbaijan"],
+["Iceland"],["India"],["Indonesia"],["Iran"],["Iraq"],["Ireland"],["Israel"],["Italy"]]) %>
+  </p>
+  <p id="pfname">
+    <%= f.label :first_name  %><br/>
+    <%= f.text_field :first_name %>
+  </p>
+ 
+  <p id="plname">
+    <%= f.label :last_name %><br/>
+    <%= f.text_field :last_name %>
+  </p>
+  </p>   
+    <p id="pemail">
+    <%= f.label "Email address " %><br/>
+    <span>We'll email you an order confirmation</span>
+    <br/>
+    <%= email_field(:user, :email) %>
+  </p>
+  <br/>
+  <%= f.submit "start shopping" %>
+<% end %>

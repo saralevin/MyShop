@@ -1,7 +1,7 @@
 class CartController < ApplicationController
    # respond_to :html, :js
 def index
-  @cart =Cart.find_by user_id: 1
+  @cart =Cart.find(session[:cart_id])
   @cartsitems = CartItem.where("cart_id = ?", @cart.id)
     @SubTotal = 0
     @cartsitems.each do |item|
@@ -19,7 +19,7 @@ def destroy
    @cartsitem = CartItem.find(params[:id])
   @cartsitem.destroy
   
-    @cart =Cart.find_by user_id: 1
+    @cart =Cart.find(session[:cart_id])
   @cartsitems = CartItem.where("cart_id = ?", @cart.id)
 
 end

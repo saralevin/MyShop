@@ -1,33 +1,49 @@
 class ProductsController < ApplicationController
-	
+
 
     def index
 		  @products=Product.all
   	end
 
 
-  	def show
+  	def show #display products details
   		@product = Product.find(params[:id])
+      @cart_item=CartItem.new
+      @cart_item.product_id=@product.id
    	end
 
 
-    def create
-      @product=Product.find(params[:id])
-#      if @product.save
- #       redirect_to @article
-  #    else
-   #     render 'new'
-    #  end
-    #  @curtItem = CurtItem.new(:cart=>Cart.find_by user_id: 1, :product=>@product.id, :quantity=> 1);
-      redirect_to :controller => 'cart', :action => 'index', :id => 1
+    def create_cart_item #create the product line in the cart_item table
+      @cart_item=CartItem.new(cart_item_params)
+      @cart_item.cart_id=session[:cart_id]
+      if @cart_item.save 
+        redirect_to :controller => 'cart', :action => 'index', :id => session[:cart_id]
+      else
+        redirect_to :action => 'index'
+      end
     end
 
 
+    def ajax_bought #count how many bought this product
+        @carts_items = CartItem.where("product_id = ?",params[:id] )
+        @count=0;
+        @carts_items.each do |item|
+            @count+=1
+        end
+
+        p @count
+        render plain: @count
+    end
+
+
+
    	private
-	  def product_params
-	    params.require(:product).permit(:Name, :Description, :Price, :Thumbnail, :Image)
-	  end
+  	  def product_params
+  	    params.require(:product).permit(:Name, :Description, :Price, :Thumbnail, :Image)
+  	  end
 
 
-    #form, i took it from the basuc setting of css. dont remove!
+      def cart_item_params
+        params.require(:cart_item).permit(:cart_id,:product_id,:quantity)
+      end
 end

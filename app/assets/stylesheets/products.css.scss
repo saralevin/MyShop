@@ -15,7 +15,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
-body div{
+body >div{
 	float:left;
 }
 
@@ -32,11 +32,11 @@ body div{
 }
 
 .indexDiscription{
-	text-color:Gray;
+	text-color:gray;
 }
 
 .indexPrice{
-	font-width:bolder;
+	font-weight:bolder;
 }
 
 .bigImage{
@@ -48,9 +48,16 @@ body div{
 	border-color:Gray;
 }
 
-.showDetails{
+.detailsDiv{
 	margin:10px 10px 10px 100px;
 	float:left;
+	font-size:12pt;
+}
+
+.firstDiv{
+	margin-bottom:10px;
+	font-weight:bolder;
+	font-size:14pt;
 }
 
 .showPrice{
@@ -60,18 +67,44 @@ body div{
 
 .inputtext{
 	float: left;
-	display: block;
 	width:70px;
 	height:20px;
 	border-style: solid;
-    border-width: 5px;
+    border-width: 1px;
 	border-color: Gray;
 
 }
+
 .inputtext:focus {
   outline: none;
 }
 
-.button{
+.buttondiv{
+	clear:both;
+	padding:10px 230px 0px 75px;
+}
 
+.button{
+	width:146px;
+	height:38px;
+	border-color:black;
+}
+
+.quantity{
+	font-size:14pt;
+}
+
+.quantityInput{
+	width:70px;
+}
+
+.bought{
+	width:428px;
+	height:33px;
+	padding:11px;
+	margin-top:10px;
+	border-style: solid;
+    border-width: 1px;
+	border-color: Gray;
+	font-size:10pt;
 }

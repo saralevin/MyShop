@@ -1,15 +1,46 @@
+<%= javascript_tag do %>
+  $( document ).ready(function() {
+
+	$( "#bought_link" ).click(function() {
+		$.ajax({
+		  url: "/products/ajax_bought",
+		  data: {id: $("#cart_item_product_id").val()},
+		  success:function(count){
+		  	$("#bought_link").remove();
+		  	$("#bought").append(count);
+		  	$("#bought").append(" products have been bought yet!");
+		  	$("#bought").addClass("bought");
+		  }
+		});
+	});
+});
+<% end %>
+
+
 
 <div>
 <%= image_tag(@product.thumbnail, :alt=>'product', :class => 'bigImage')%>
 </div>
-<div class="showDetails">
-	<div><p><%= @product.description %></p></div>
-	<div class="showPrice"><p><%= @product.price %></p></div>
-	<p>Quantity:</p>
-	<imput type="text" id="count" class="inputtext" text="1"/>
-
-	<%= link_to image_tag('AddTo.png', :class => 'button'),{ :action => 'create',:id => @product.id}, :method => :post %>
-
-	<p><% @product.description%></p>
-
+<div class="detailsDiv">
+	<%= form_for @cart_item, url: {action: "create_cart_item"} do |f| %>
+		<div class="firstDiv">
+			 	<%= @product.description %>
+			<div class="showPrice">
+			 	<%= @product.price %>
+			 	<span>$</span>
+			</div>
+		</div>
+		<div class:"quantity">
+		 	<span style="clear:both">Quantity:</span>
+		  	<%= f.text_field :quantity, class:"quantityInput"%>
+		</div>
+		<div style="display:none">
+			<%= f.text_field :product_id %>
+		</div>
+		<div class="buttondiv">
+		 	<%=image_submit_tag("AddTo.png", class: 'button', alt: 'Find', product_id:@product.id )%>
+		</div>
+	<%end%>
+	<%= link_to "how many bought me?","#", :id => 'bought_link' %>
+	<div id="bought"></div>
 </div>
