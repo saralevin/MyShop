@@ -1,29 +1,3 @@
-<%= javascript_tag do %>
-
-<!-- $(document).ready (function(){
-alert("bbbb")
-	$("[class='number_field_count']").bind('click',function(){
-  alert("הגעתי לקליק");
-		$.ajax({
-		  url: 'cart_item/calculation_price',
-		  data: form.serialize(), 
-		  success:function(s){
-		alert(s)
-		  }
-		    feild: function(data)
-                    {
-                        alert("feild");
-                    }
-		});
-
-	     $("[class='number_field_count']").css('color','red');
- 
-	});
-		$("[class='number_field_count']").click(function(){alert("change")
-});
-
-	}); -->
-<% end %>
 <html>
 <head>
   <title>Shop</title>
@@ -37,10 +11,10 @@ alert("bbbb")
 	<table>
 	<thead>
 	<tr>
-		<th id="thItemInfo">Item Information</th>
-		<th id="thQty">Qty</th>
-		<th id="thPrice">Price</th>
-		<th id="thRemove">Remove</th>
+		<th >Item Information</th>
+		<th id="th_qty">Qty</th>
+		<th id="th_price">Price</th>
+		<th id="th_remove">Remove</th>
 	</tr>
 	</thead>
 		<tbody id="tbody">
@@ -48,10 +22,10 @@ alert("bbbb")
 		</tbody>
 	</table>
 	<section>
-			<div id="SummaryText">
+			<div id="summary_text">
 				<span>Sub Total<br/>
 				Shopping Charge</span><br/>
-				<span class="SummaryToatal">Total</span>
+				<span class="summary_toatal">Total</span>
 			</div>
 			<div id="summary_details">
 					<%= render partial: 'summary_details'  %>
@@ -61,9 +35,10 @@ alert("bbbb")
 </section>
 <nav class="nav">
 
- <%= link_to image_tag("GoTo.png"), products_path, :id => "bCheck" %>
+ <%= link_to image_tag("GoTo.png"),edit_user_path(@cartsitems[0].cart)  , :id => "b_check" %>
  <br/>
-	<%= link_to image_tag("Cont.png"),  edit_user_path(@cartsitems[0].cart)  , :id => "bCont" %>
+ 	<%= link_to image_tag("Cont.png"),  products_path , :id => "b_continue" %>
+
  </nav>
 </body>
 </html>

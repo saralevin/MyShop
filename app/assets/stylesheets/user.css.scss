@@ -17,86 +17,93 @@ font-size: 24px;
 font-family: "Liberation Serif";
 font-weight: 100;
 }
-#spancheckout {
+#span_checkout {
 font-weight: 900;;
 }
-#spanPlease{
+#span_please{
 	font-size: 12px;
 	margin-left: 11px;
 }
-#sectiondetails{
+#section_details{
 	float:left
 }
 p{
 	margin: 6px 10px 0px 10px;
 }
-#pfname, #pcity{
+#p_first_name, #p_city{
 	float:left;
 }
 input ,select{
 	height: 30px;
 }
 
-#paddress input{
-
-width: 480px;
+#p_address input{
+	width: 480px;
 }
-#paddress input:nth-child(5){
-margin-top: 8px;
+#p_address input:nth-child(5){
+	margin-top: 8px;
 
 }
-#pcountry select{
+#p_country select{
 	width: 293px;
 }
-#plname input, #pfname input{
-width: 233px;
+
+#p_last_name input, #p_first_name input{
+	width: 233px;
 }
-#pphone input {
+#p_phone input {
 	width: 159px;
 }
-#pzip input {
+#p_zip input {
 	width: 109px;
 }
-#pemail input {
+#p_email input {
 	width: 323px;
 }
-#pphone span ,#pemail span {
+#p_phone span ,#p_email span {
 	font-size: 11px;
-color: #b2b2b2;
-display: inherit;
-margin-top: -6px;
-margin-bottom: -22px;
+	color: #b2b2b2;
+	display: inherit;
+	margin-top: -6px;
+	margin-bottom: -22px;
 }
+
 .edit_user label{
 font-family: 'Ubuntu Light';
 font-size: 15px;
 }
-#sectioncont{
+
+#section_continue{
 float: right;
 text-align: right;
 margin-top: 5px;
 }
-#divsubtotal{
+
+#div_subtotal{
 padding-right: 11px;
 margin-top: 12px;
 width: 305px;
 height: 61px;
-	float: none;
+float: none;
 background-image: -webkit-linear-gradient(top ,rgb(237, 237, 237) 0%, rgb(253, 253, 253) 100%);
 border-top: 3px solid rgb(160, 160, 160);
 border-bottom: 3px solid rgb(239, 239, 239);
 }
-#sectioncont p{
+
+#section_continue p{
 font-size: 14px;
 margin: -5px;
 }
-#sectioncont p:nth-child(2){
+
+#section_continue p:nth-child(2){
 color: #3065cf;
 }
+
 #span_sub_total_text{
 	font-weight: 900;
 
 }
+
 #span_sub_total{
 font-weight: 900;
 font-size: 22px;
@@ -107,6 +114,11 @@ margin-left: 5px;
 color: #3065cf;
 font-weight: 900;
 }
+
 #button_continue{
+height: 43px;
+width: 157px;
 	margin-top: 8px;
+
+background:url(Continue.png); 
 }

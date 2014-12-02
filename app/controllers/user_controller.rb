@@ -38,7 +38,10 @@ class UserController < ApplicationController
 
   def update
   	@user = User.find(params[:id])
+    p @user
   	if @user.update(user_params)
+      p @user
+      p "===================="
     	redirect_to  :action => "end"
  	  else
   	  render 'edit'
@@ -46,6 +49,7 @@ class UserController < ApplicationController
   end
 
   def end
+          p "=|=|====|=============="
   end
 
 private

@@ -1,11 +1,11 @@
 	<% @cartsitems.each do |cartsitem| %>
-		<tr class="trItem">
+		<tr class="tr_item">
 			<td>
-				<div class="divItemInfo" >
-					<%= image_tag(cartsitem.product.thumbnail, class: "imgItem") %>
-					<div class="ItemInfoDivText">
-						 <p class="ItemInfoText"><%= cartsitem.product.description %></p> 
-						<p class="ItemInfoId"><%= cartsitem.product.code %></p>
+				<div class="div_item_info" >
+					<%= image_tag(cartsitem.product.thumbnail, class: "img_item") %>
+					<div class="item_info_div_text">
+						 <p class="item_info_text"><%= cartsitem.product.description %></p> 
+						<p class="item_info_id"><%= cartsitem.product.code %></p>
 					</div>
 				</div>
 			</td>
@@ -21,7 +21,6 @@
                     method: :delete, data: { 
                     	confirm: 'האם אתה בטוח?' } ,:remote=>true,:class=>'delete_button' %> 
 
-                    <!-- cart_path(cartsitem) -->
                     </td>
 		</tr>
 

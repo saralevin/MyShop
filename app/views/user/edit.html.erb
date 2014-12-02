@@ -1,52 +1,52 @@
 <body>
 <section class='section_1'>
 <header>
-	<h1 id='h1_user_checkout'><span id ="spancheckout">Checkout:</span>
+	<h1 id='h1_user_checkout'><span id ="span_checkout">Checkout:</span>
 	<span>Shopping address</span>
 	</h1>
-	<spann id="spanPlease">Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
+	<spann id="span_please">Please  provide a shipping address so that we can calculate shipping fees and applicable taxes</span>
 </header>
 <%= form_for @user do |f| %>
-<section id="sectiondetails">
-  <p id ="pcountry">
+<section id="section_details">
+  <p id ="p_country">
 	<span>Country or region</span><br/>
-	<%= f.select :city, options_for_select([["Afghanistan"],
-["Albania"],["Algeria"],["Andorra"],["Angola"],["Antigua and Barbuda"],["Argentina"],["Armenia"],["Aruba"],["Australia"],["Austria"],["Azerbaijan"],
-["Iceland"],["India"],["Indonesia"],["Iran"],["Iraq"],["Ireland"],["Israel"],["Italy"]]) %>
+	<%= f.select (:country["Afghanistan",
+"Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy"]) %>
   </p>
-  <p id="pfname">
+  <p id="p_first_name">
     <%= f.label :first_name  %><br/>
     <%= f.text_field :first_name %>
   </p>
  
-  <p id="plname">
+  <p id="p_last_name">
     <%= f.label :last_name %><br/>
     <%= f.text_field :last_name %>
   </p>
- <p id="paddress">
+ <p id="p_address">
  	<%= f.label :"street address" %><br/>
  	<%= f.text_field :address1  %><br/>
  	<%= f.text_field :address2  %>
  </p>
-   <p id="pcity">
+   <p id="p_city">
     <%= f.label :city %><br/>
     <%= f.text_field :city %>
   </p>
-    <p id="pstate">
+    <p id="p_state">
     <%= f.label :state %><br/>
     <%= f.text_field :state %>
   </p>  
-  <p id="pzip">
+  <p id="p_zip">
  
    <label>ZIP code</label><br/>
     <%= f.text_field :zip %>
   </p>
-     <p id="pphone">
-    <%= f.label "Phone number" %><img src="/assets/?.png"><!-- <br/> --><span>This will only be used if there are shipping questions</span><br/>
+     <p id="p_phone">
+    <%= f.label "Phone number" %>
+    <%= image_tag("question_mark.png") %><span>This will only be used if there are shipping questions</span><br/>
     <%= telephone_field(:user, :phone) %>
 
   </p>   
-    <p id="pemail">
+    <p id="p_email">
     <%= f.label "Email address " %>
     <span>We'll email you an order confirmation</span>
      <br/> 
@@ -55,11 +55,11 @@
 
 </section>
 </section>
-<section id="sectioncont">
+<section id="section_continue">
 
 <p>How do yow like our new checkout</p>
 <p>Tell us what yow think</p>
-<div id="divsubtotal">
+<div id="div_subtotal">
 <span id='span_sub_total_text'>SubTotal:</span>
 <span id='span_sub_total'><%= @SubTotal %>&#8362;</span><br/>
 <span id='span_covered_by'>Covered by </span>
@@ -67,7 +67,7 @@
 </div><br/>
 <p>Continue to review your order</p>
     <p>
-      <%= f.submit "", :type => :image, :src => "/assets/Continue.png",:id=>'button_continue' %>
+      <%= f.submit "",method: :post,:id=>'button_continue' %>
   </p>
 </section>
 <% end %>
