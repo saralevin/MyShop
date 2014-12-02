@@ -2,8 +2,8 @@
 class CartItemController < ApplicationController
 
 	def index
-		  @cart =Cart.find()
- 		@cartsitems = CartItem.where("cart_id = ?",params[:cart_id])
+		  # @cart =Cart.find(session[:cart_id])
+ 		@cartsitems = CartItem.where("cart_id = ?",session[:cart_id])
    		@SubTotal = 0
     	@cartsitems.each do |item|
       	      @SubTotal += item.product.price* item.quantity
@@ -21,21 +21,19 @@ class CartItemController < ApplicationController
    		@SubTotal = session[:SubTotal]
    		@SubTotal -=@cartsitem.product.price* @cartsitem.quantity
  		@ShoppingCharge=session[:ShoppingCharge]
-   		@Total= @ShoppingCharge+@SubTotal
-   		
-   		@cartsitem.destroy
-
-   		@cartsitems = CartItem.where("cart_id = ?",params[:cart_id])
+   	@Total= @ShoppingCharge+@SubTotal
+   	@cartsitem.destroy
+   	@cartsitems = CartItem.where("cart_id = ?",params[:cart_id])
 	end
 
 	def calculation_price
 		@cartsitems = CartItem.where("cart_id = ?",params[:cart_id])
-   		@SubTotal = 0
-    	@cartsitems.each do |item|
-      	      @SubTotal += item.product.price* item.quantity
-    		end 
-  		@ShoppingCharge =20
- 	    @Total = @SubTotal+@ShoppingCharge
+   	@SubTotal = 0
+    @cartsitems.each do |item|
+      @SubTotal += item.product.price* item.quantity
+    end 
+  	@ShoppingCharge =20
+ 	  @Total = @SubTotal+@ShoppingCharge
 	end
 
  def update_count 

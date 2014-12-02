@@ -40,6 +40,7 @@ class UserController < ApplicationController
   end
 
   def update
+    p '===========pppppppppppppppp'
   	@user = User.find(params[:id])
   	if @user.update(user_params)
     	redirect_to  :action => "end"
