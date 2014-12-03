@@ -10,8 +10,9 @@
 <section id="section_details">
   <p id ="p_country">
 	<span>Country or region</span><br/>
-	<%= f.select :country, options_for_select([["Afghanistan","Afghanistan"],
-["Albania","Albania"],["Algeria","Algeria"]] ,:selected =>params[:country])  %>
+	<%=  f.select :country, options_for_select([["Afghanistan"],
+["Albania"],["Algeria"],["Andorra"],["Angola"],["Antigua and Barbuda"],["Argentina"],["Armenia"],["Aruba"],["Australia"],["Austria"],["Azerbaijan"],
+["Iceland"],["India"],["Indonesia"],["Iran"],["Iraq"],["Ireland"],["Israel"],["Italy"]])  %>
   </p>
   <p id="p_first_name">
     <%= f.label :first_name  %><br/>
