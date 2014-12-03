@@ -29,9 +29,9 @@ end
     resources :cart do
       resources :cart_item 
     end
-    resources :user 
+    # resources :user 
     
-  get 'user/end' => 'user#end'
+  # get 'user/end' => 'user#end'
 
 resources :user do 
   collection do 
@@ -39,6 +39,7 @@ resources :user do
     get 'start'
     post 'start_shopping'
   end
+  
 end
 
   resources :cart_item do 
