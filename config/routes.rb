@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'cart_item/list'
-  root 'cart_item#list'
+  
 
   get 'cart_item/shipping'
   
@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#index'
-
+  root 'cart_item#list'
 
 
   resources :products
