@@ -1,0 +1,66 @@
+body{
+	width: 685px;
+	font-family: sans-serif;
+	margin-left: 20px;
+	font-size: 10px;
+}
+h1{
+	font-size: 23px;
+	margin-left: 6px;
+}
+table, th, tr{
+    border: 1px solid black;
+    width: 460px;
+    height: 20px;
+}
+td{
+	border-right:  1px solid black;
+}
+tbody{
+	background-color: lightgrey;
+}
+#left{
+	float: left;
+	width: 476px;
+}
+#right{
+	float: right;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+.navButtons{
+	width: 182px;
+	height: 28px;
+}
+#totalRow{
+	border: 2px solid #7EA207;
+	width: 460px;
+	border-right:0px; 
+	height: 63px;
+}
+#sumDescription{
+	text-align: right;
+	border-right: 10px solid #7EA207;
+	width: 205px;
+	float: left;
+	padding-right: 10px;
+
+}
+#sumNumbers{
+	float: right;
+	width: 235px;
+	background-color: #EAEAEA;
+	text-align: center;
+}
+.divsInTotal{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 43px;
+}
+.descriptionFont{
+	font-size: 9px;
+	font-weight: bold;
+}
+.total{
+	font-weight: bold;
+}

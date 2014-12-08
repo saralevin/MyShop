@@ -1,0 +1,33 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../cart_list.css">
+</head>
+<div id="left">
+<h1>SHOPPING BAG</h1>
+	<table id="cartTable">
+		<tr class="descriptionFont">
+			<td>Item Information</td>
+			<td>Qty</td>
+			<td>Price</td>
+			<td>Remove</td> 
+		</tr>
+	</table>
+	<div id="totalRow">
+		<div class="divsInTotal" id="sumDescription">
+			<span> sub Total:</span>
+			<br/>
+			<span>Shipping Charge:</span> 
+			<br/>
+			<span class="total">TOTAL:</span> 
+		</div>
+		<div class="divsInTotal" id="sumNumbers">
+			<label id="subTotal_number"></label>
+			<label id="ShippingCharge_number"></label>
+			<label class="total" id="total_number"></label>
+		</div>
+	</div>
+</div>
+<div id="right">
+	<%= link_to image_tag("GoTo.png", :class=>'navButtons')%>
+	<br/>
+	<%= link_to image_tag("Cont.png", :class=>'navButtons')%>
+</div>

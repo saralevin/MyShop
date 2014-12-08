@@ -1,0 +1,109 @@
+body{
+	width: 1048px;
+	font-family: serif;
+	margin-left: 20px;
+}
+#h11{
+	font-size: 19px;
+	font-weight: bold;
+}
+#h22{
+	font-size: 21px;
+	font-weight: normal;
+}
+
+.leftDiv{
+	float: left;
+	font-size: 14px;
+}
+#countries{
+	width: 319px;
+	-webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+	border: 1.5px solid grey;
+}
+.name{
+	width:232px;
+	
+}
+#fn{
+	padding-right:162px;
+}
+#city{
+	padding-right:150px;
+}
+.address{
+	width:485px ;
+}
+.allInput{
+	height:28px ;
+	margin-bottom: 12px;
+	margin-top: 4px;
+}
+#state{
+	width: 183px;
+	margin-left: 9px;
+}
+#inputCity{
+	width: 160px;
+}
+#zip{
+	width: 110px;
+}
+.comment{
+	font-size:10px; 
+}
+#phone{
+	width: 155px;
+}
+#email{
+	width: 335px;
+}
+
+
+
+
+
+
+#navButtons{
+	text-align: right;
+	float: right;
+}
+#sumShipping{
+	background: -moz-linear-gradient(center top , rgba(221, 221, 221, 1), #FFF) repeat scroll 0% 0% transparent;
+	border-top: 1.3px solid grey;
+	border-bottom:  1px solid lightgrey;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	width: 291px;
+	height: 33px;
+	padding-top: 11px;
+	padding-bottom: 14px;
+}
+.fontRightLabels{
+	font-size: 9px;
+}
+a{
+	text-decoration: none;
+}
+#eBuy{
+	color: rgba(61, 106, 164, 1);
+	font-size: 11px;
+}
+.someLbl{
+	font-size: 12px;
+}
+#sum{
+	font-size: 16px;
+}
+#contBtn{
+	width:148px;
+	height:34px;
+	margin-top: 10px;
+}
+
+
+
+

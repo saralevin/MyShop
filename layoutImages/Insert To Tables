@@ -1,0 +1,12 @@
+
+insert into products (code,description,price,thumbnail) values ('664-179-G79','Pink Butterfy Dress (0-18mths)',53,'/home/tzipora/Projects/MyShop/app/assets/images/1.jpg');
+insert into products (code,description,price,thumbnail) values ('111-222-333',' Long Sleeve Shirts Two Pack (0-16yts)',60,'/home/tzipora/Projects/MyShop/app/assets/images/2.jpg');
+insert into users (first_name, last_name, address1,  address2 , city ,  country, phone ,email) values ('Tzipi','Knobel',' Rozenblat', 'Ramot c','Jerusalem','Israel','0583200604','zipik@3base.co.il');
+insert into users (first_name, last_name, address1, city ,  country, phone ,email) values('Dasi','Shimborski','Rozhenaim','Beneberaq','Israel','0583200604','hadassa@3base.co.il');
+insert into carts (user_id) values (1);
+insert into cart (ProductId,UserId,Quantity) values (2,1,1);
+insert into cart (ProductId,UserId,Quantity) values (1,2,4);
+insert into cart (ProductId,UserId,Quantity) values (2,2,3);
+insert into  cart_items ( cart_id ,product_id ,quantity ) values (1,4,8);
+insert into  cart_items ( cart_id ,product_id ,quantity ) values (1,5,8);
+213@terem.div

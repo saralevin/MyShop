@@ -1,0 +1,62 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../cart.css">
+</head>
+<div class="leftDiv">
+	<h2><span id="h11">Checkout: </span><span id="h22">Shipping address</span></h2>
+	<span >Please provide a shipping address so that we can calculate shipping fees and applicable taxes.</span>
+	<br/>
+	<label id="country">Country or region</label>
+	<br/>
+	<select id="countries" class="allInput"></select>
+	<br/>
+	<label id="fn">First name</label>
+	<label>Last name</label>
+	<br/>
+	<input  class="name allInput" type="text"></input>
+	<input  class="name allInput" type="text"></input>
+	<br/>
+	<label>Street address</label>
+	<br/>
+	<input class="address allInput" type="text"></input>
+	<br/>
+	<input class="address allInput" type="text"></input>
+	<br/>
+	<label id="city">City</label>
+	<label>State</label>
+	<br/>
+	<input class="allInput" id="inputCity" type="text"></input>
+	<input  class="allInput" id="state" type="text"></input>
+	<br/>
+	<label>ZIP code</label>
+	<br/>
+	<input class="allInput" id="zip" type="text"></input>
+	<br/>
+	<label>Phone number</label>
+	<img src="question_mark.png">
+	<br/>
+	<label class="comment">This will only be used if there are shipping questions</label>
+	<br/>
+	<input class="allInput" id="phone" type="text"></input>
+	<br/>
+	<label>Email address</label>
+	<br/>
+	<label class="comment">We'll email you an order confirmation</label>
+	<br/>
+	<input class="allInput" id="email" type="text"></input>
+</div>
+<div id="navButtons">
+	<label class="fontRightLabels">How do you like our new checkout?</label>
+	<br/>
+	<a href="" class="fontRightLabels">Tell us what you think</a>
+	<div id="sumShipping">
+		<label class="someLbl">Subtotal:</label>
+		<label id="sum"></label>
+		<br/>
+		<label class="fontRightLabels">Covered by</label>
+		<label id="eBuy">eBay Buyer Protection</label>
+	</div>
+	<label class="someLbl">Continue to review your order</label>
+	<br/>
+	<%= link_to image_tag("Continue.png", :class=>'navButtons', :id=>'contBtn')%>
+</div>
+</div>
