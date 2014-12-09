@@ -1,4 +1,33 @@
 
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="products.css.scss" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+  	var y=0
+  	var s=2
+
+   <% @products.each do |product| %>
+   		if ( <%= product.code %> == "111")
+			y=y + <%= product.code %>
+	<% end %>
+
+  	$("#DvAmountPr").text( $("#DvAmountPr").text() + y);
+  	$("#DvAmountPr").show(); 
+  });
+});
+</script>
+
+
+
+
+</head>
+
+
+<body>
 <form id="fmProducts">
 
 	<% @products.each do |product| %>
@@ -18,6 +47,16 @@
 
 
 
+
+<button>How many bought from me?</button>
+	<div id="DvAmountPr">
+       bought from me: 
+	</div>
+
+
+</body>
+ 
+</html>
 
 
 

@@ -1,31 +1,44 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="products.css.scss" />
 
-<form id="frmChooseProduct"> 
-<div id="DvImgProduct">
+
+
+
+
+
+</head>
+
+
+<body>
+	<form id="frmChooseProduct"> 
+	<div id="DvImgProduct">
+	 
+	<%= image_tag(@product.thumbnail,:width => 305, :height => 460) %>
+
+	</div>
+
+	<label class="DscPrcSh" id="lblDescSh"> <%= @product.description %> </label>
+	<label class="DscPrcSh" id="lblPrcSh"> ש"ח <%= @product.price %> </label>
+
+	<div id="DvAcountSh">
+	<label> Quantity:</label>
+	<input type="text" name="fname" id="ddd">
+	</div>
+
+	<div id="btnAddTo">
+	<%= link_to image_tag("AddTo.png"), url_for({ :action => 'index'}) %>
+	</div>	
+
+
+
+
+
+	</form>
+
+	
+
+</body>
  
-<%= image_tag(@product.thumbnail,:width => 305, :height => 460) %>
-
-</div>
-
-<label class="DscPrcSh" id="lblDescSh"> <%= @product.description %> </label>
-<label class="DscPrcSh" id="lblPrcSh"> ש"ח <%= @product.price %> </label>
-
-<div id="DvAcountSh">
-<label> Quantity:</label>
-<input type="text" name="fname" id="ddd">
-</div>
-
-<div id="btnAddTo">
-<%= link_to image_tag("AddTo.png"), url_for({ :action => 'index'}) %>
-</div>	
-
-<div id="sss">
-<a href=""> How many bought from me?	</a>	  
-</div>
-
-
- 
-
-
-</form>
-
-
+</html>
+	
