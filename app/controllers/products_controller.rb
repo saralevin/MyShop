@@ -2,21 +2,37 @@ class ProductsController < ApplicationController
 
 
 def new
-	 @product = Product.new
+	session[:MyId] = params[:id]
+	@product = Product.find(session[:MyId] )	
 end
 
 
 def show
-	 @product = Product.find(params[:id])	
+	@carts = Cart.all
+	@product = Product.find( params[:id] )	
 end
 
 def index
   @products = Product.all
 end
 
-def say_when
-  render_text "<p>The time is </p>"
+
+def insertCard
+
+  @carts = Cart.new(cart_params)
+ 
+  @carts.save
 end
+ 
+
+
+private
+
+  def cart_params
+    params.require(:carts).permit(:userId, :productCode, :quantity, :totalSum)
+  end
+ 
+
 
 
 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cartId: 1
+  productCode: MyString
+  quantity: MyString
+  integer: MyString
+  totalSum: MyString
+  integer: MyString
+
+two:
+  cartId: 1
+  productCode: MyString
+  quantity: MyString
+  integer: MyString
+  totalSum: MyString
+  integer: MyString

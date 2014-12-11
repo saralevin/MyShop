@@ -5,15 +5,23 @@ Rails.application.routes.draw do
 
   get 'cart_item/shipping'
   
-   get 'products/index'
+  get 'products/index'
+
+  get 'products/insertCard'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'cart_item#list'
+  root 'products#index'
 
 
   resources :products
+
+  resources :users
+
+  resources :carts
+
+  resources :cartItems
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
