@@ -1,6 +1,7 @@
 <head>
-	<link rel="stylesheet" type="text/css" href="../cart_list.css">
+	<link rel="stylesheet" type="text/css" href="cart_list.css">
 </head>
+<body id="cartBody">
 <div id="left">
 <h1>SHOPPING BAG</h1>
 	<table id="cartTable">
@@ -10,6 +11,9 @@
 			<td>Price</td>
 			<td>Remove</td> 
 		</tr>
+	    <%= @myCart.each do |productInCart| %>
+			<%= render :partial =>"cartRow", :locals => {:productInCart => productInCart} %>
+		<% end %>
 	</table>
 	<div id="totalRow">
 		<div class="divsInTotal" id="sumDescription">
@@ -31,3 +35,4 @@
 	<br/>
 	<%= link_to image_tag("Cont.png", :class=>'navButtons')%>
 </div>
+</body>

@@ -12,4 +12,5 @@ class CreateUsers < ActiveRecord::Migration
     	t.string:email
       t.timestamps
     end
-  endend
+  end
+end

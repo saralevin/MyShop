@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
 
   get 'cart_item/shipping'
+  get 'cart_item/insertIn'
   
    get 'products/index'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
 
 
   resources :products
+  resources :users
+  resources :carts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

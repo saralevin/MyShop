@@ -1,4 +1,4 @@
-body{
+#cartBody{
 	width: 685px;
 	font-family: sans-serif;
 	margin-left: 20px;
@@ -15,9 +15,6 @@ table, th, tr{
 }
 td{
 	border-right:  1px solid black;
-}
-tbody{
-	background-color: lightgrey;
 }
 #left{
 	float: left;
@@ -60,7 +57,33 @@ tbody{
 .descriptionFont{
 	font-size: 9px;
 	font-weight: bold;
+	background-color: lightgrey;
 }
 .total{
 	font-weight: bold;
+}
+#chooseQuantity{
+	width: 46px;
+	height: 18px;
+	font-size: 10px;
+	margin-left: 8px;
+	margin-right: 9px;
+}
+#quantity{
+	width: 60px;
+}
+#price{
+	width: 78px;
+}
+#priceLbl{
+	float: right;
+}
+#removeBtn{
+	width: 56px; 
+}
+.remove{
+	width: 16px;
+	height: 16px;
+	margin-left: 20px;
+	margin-right: 20px;
 }

@@ -1,33 +1,34 @@
-list_contries
+<%@listContries.each do |aCountry| %>
+            var opt = aCountry;
+            var el = document.createElement("option");
+            el.textContent = opt;
+            el.value = opt;
+            this.appendChild(el);
+        <% end %>
 
-
-    Afghanistan
-    Albania
-    Algeria
-    Andorra
-    Angola
-    Antigua and Barbuda
-    Argentina
-    Armenia
-    Aruba
-    Australia
-    Austria
-    Azerbaijan
-    Bahamas, The
-    Bahrain
-    Bangladesh
-    Barbados
-    Belarus
-    Belgium
-    Belize
-    Benin
-    Bhutan
-    Bolivia
-    Bosnia and Herzegovina
-    Botswana
-    Brazil
-    Brunei
-    Bulgaria
+<script type="text/javascript">
+    listContries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Aruba",
+    "Australia","Austria","Azerbaijan","Bangladesh","Barbados","Belarus","Belgium","Belize",
+    "Benin","Bhutan","Bolivia","Botswana","Brazil","Brunei","Bulgaria","Israel"];
+for (var i = 0; i <listContries.length; i++) {
+    var opt = listContries[i];
+            var x = document.getElementById("countries");
+            var option = document.createElement("option");
+            option.text = listContries[i];
+            x.add(option);
+            };
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     Burkina Faso
     Burma
     Burundi
@@ -86,7 +87,7 @@ list_contries
     Iran
     Iraq
     Ireland
-    Israel
+    
     Italy
 
 
