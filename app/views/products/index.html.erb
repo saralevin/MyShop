@@ -10,7 +10,7 @@
 
 	<% @products.each do |product| %>
 		<div id="DivProduct">
-		      <%= link_to image_tag(product.thumbnail, :class => 'indexImage'), url_for({ :action => 'show', :id => product.id}) %>
+		      <%= link_to image_tag(product.thumbnail, :class => 'indexImage'), url_for({ :action => 'show',:controller=>"products", :id => product.id}) %>
 			  <label id="lblDescIn"><%= product.description %></label>
 			  <br/>
 			  <label id="lblPriceIn"> <%= product.price %>  ש"ח </label>  

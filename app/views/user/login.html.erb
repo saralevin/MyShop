@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" type="text/css" href="user.css.scss" />
+
+</head>
+
+
+<body>
+
+<h1> Login </h1>
+
+<%= form_for @new_user, url: {action: "createUser"}, html: {class: "nifty_form"} do |f| %>
+    <%= f.label :firstName %><br>
+    <%= f.text_field :firstName %>
+  </p>
+ 
+  <p>
+    <%= f.label :lastName %><br>
+    <%= f.text_field :lastName %>
+  </p>
+ 
+  <p>
+    <%= f.label :email %><br>
+    <%= email_field(:user, :email) %>
+  </p>
+
+  <p>
+    <%= f.submit "enter" , class: "btnLogin" %>
+  </p>
+  
+<% end %>
+
+</body>
+ 
+</html>
+  

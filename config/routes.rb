@@ -7,21 +7,38 @@ Rails.application.routes.draw do
   
   get 'products/index'
 
-  get 'products/insertCard'
+  get 'products/create'
+
+  get 'user/login'
+
+  get 'user/index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'products#index'
+  root 'user#index'
 
 
-  resources :products
+
+  post 'user/createUser'
+
+  post 'user/create_user_cart'
+ 
+  post 'products/insertItem'
+
+  get 'products/amountProduct'
+
+  resources :products 
 
   resources :users
 
   resources :carts
 
-  resources :cartItems
+  resources :cart_items
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

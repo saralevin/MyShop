@@ -4,9 +4,7 @@ class CreateCartItems < ActiveRecord::Migration
       t.integer :cartId
       t.string :productCode
       t.string :quantity
-      t.string :integer
       t.string :totalSum
-      t.string :integer
 
       t.timestamps
     end
