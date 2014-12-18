@@ -24,7 +24,7 @@ def insertItem
   @item = CartItem.new(item_params)
   @item.totalSum = @item.totalSum.to_i * @item.quantity.to_i
 
-  if @item.quantity.to_i <= 0
+  if !@item.valid?
      @products = Product.all
      render 'index'
   else

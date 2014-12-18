@@ -1,6 +1,5 @@
 class UserController < ApplicationController
 
-
 def index
 	@new_user = User.new
   render 'login'
@@ -12,21 +11,25 @@ end
 
 def createUser
   @user = User.new(user_params)
-  @findUser = User.find_by email: @user.email
-  
-  if @findUser
-    create_user_cart ( @findUser.id )
+
+  if !@user.valid?
+    @new_user = User.new
+    render 'login'
   else
-    if @user.save
-      create_user_cart ( @user.id )
+    @findUser = User.find_by email: @user.email
+    if @findUser
+      create_user_cart ( @findUser.id )
     else
-      @new_user = User.new
-      render 'login'
+      if @user.save
+        create_user_cart ( @user.id )
+      else
+        @new_user = User.new
+        render 'login'
+      end
     end
   end
 end
 
- 
 
 private
 

@@ -15,14 +15,14 @@
 	<label class="DscPrcSh" id="lblDescSh"> <%= @product.description %> </label>
 	<label class="DscPrcSh" id="lblPrcSh"> ש"ח <%= @product.price %> </label>
 
-	<%= form_for @new_item, url: {action: "insertItem"}, html: {class: "nifty_form"} do |f| %>
+	<%= form_for @new_item, url: {action: "insertItem"} do |f| %>
 
 	<%= f.hidden_field :cartId, :value => session[:idCart] %>
 	<%= f.hidden_field :productCode, :value =>  @product.code %>
 
 	<div id="DvAcountSh">
 	<label> Quantity:</label>
-	<%= f.number_field(:quantity)   %>
+	<%= f.number_field :quantity, :min => 0 %>
 	</div>
 	<%= f.hidden_field :totalSum, :value =>  @product.price %>
     <%= f.submit "" ,  class: "addItem" %>

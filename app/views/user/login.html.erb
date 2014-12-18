@@ -7,23 +7,23 @@
 </head>
 
 
-<body>
+<body >
 
-<h1> Login </h1>
 
-<%= form_for @new_user, url: {action: "createUser"}, html: {class: "nifty_form"} do |f| %>
-    <%= f.label :firstName %><br>
-    <%= f.text_field :firstName %>
+<%= form_for @new_user, url: {action: "createUser"}, html: {class: "login_form"} do |f| %>
+  <h1> Login </h1>
+  <br/>
+  <section>Enter your details:</section>
+  <p>
+    <%= f.text_field :firstName, :placeholder => "first name" %>
   </p>
  
   <p>
-    <%= f.label :lastName %><br>
-    <%= f.text_field :lastName %>
+    <%= f.text_field :lastName, :placeholder => "last name" %>
   </p>
  
   <p>
-    <%= f.label :email %><br>
-    <%= email_field(:user, :email) %>
+    <%= email_field(:user, :email, :placeholder => "email") %>
   </p>
 
   <p>

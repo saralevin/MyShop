@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'user#index'
 
-
-
   post 'user/createUser'
 
   post 'user/create_user_cart'
