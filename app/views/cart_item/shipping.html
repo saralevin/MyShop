@@ -4,52 +4,55 @@
 </head>
 
 <body id="shippingBody">
+<%= form_for @user  ,:url => {:controller => "user", :action => "saveAndGo"}, :method => 'post' do |f|  %>
 	<div class="leftDiv">
 		<h2><span id="h11">Checkout: </span><span id="h22">Shipping address</span></h2>
 		<span >Please provide a shipping address so that we can calculate shipping fees and applicable taxes.</span>
 		<br/>
-		<label id="country">Country or region</label>
+	
+		<%= f.label :country, "Country or region" ,:id => "country"%>
 		<br/>
-<!-- 		<select id="countries" class="allInput">
-			<%=  %>
-		</select> -->
-		<%=select_tag  :countries, options_for_select(@listContries), {:class=>"allInput"}%>
+		<%=f.select  :country, options_for_select(@listContries), {:class=>"allInput"},:id => "countries"%>
 		<br/>
-		<label id="fn">First name</label>
-		<label>Last name</label>
+		<%= f.label :firstName, "First name" ,:id => "fn"%>
+		<%= f.label :lastName, "Last name" %>
 		<br/>
-		<input  class="name allInput" type="text"></input>
-		<input  class="name allInput" type="text"></input>
+		<%= f.text_field :firstName ,:class=>"allInput" %>
+		<%= f.text_field :lastName ,:class=>"allInput" %>
 		<br/>
-		<label>Street address</label>
+		<%= f.label :streetAddress, "Street address" %>
 		<br/>
-		<input id="address1" class="address allInput" type="text"></input>
+		<%= f.text_field :streetAddress  ,:class=>"address allInput" ,:id => "address1" %>
 		<br/>
-		<input id="address2" class="address allInput" type="text"></input>
+		<%= f.text_field :streetAddress  ,:class=>"address allInput" ,:id => "address2" %>
+		<%= f.hidden_field(:streetAddress ,:value =>params[:address1].to_s+" "+params[:address2].to_s)%> 
 		<br/>
-		<label id="city">City</label>
-		<label>State</label>
+		<%= f.label :city, "City" ,:id => "city"%>
+		<%= f.label :state, "State" %>
 		<br/>
-		<input class="allInput" id="inputCity" type="text"></input>
-		<input  class="allInput" id="state" type="text"></input>
+		<%= f.text_field :city ,:class=>"allInput" ,:id => "inputCity"%>
+		<%= f.text_field :state ,:class=>"allInput" ,:id => "state"%>
 		<br/>
-		<label>ZIP code</label>
+		<%= f.label :zipCode, "ZIP code" %>
 		<br/>
-		<input  class="allInput" id="zip" type="text"></input>
+		<%= f.text_field :zipCode ,:class=>"allInput" ,:id => "zip"%>
 		<br/>
-		<label>Phone number</label>
+		<%= f.label :phoneNumber, "Phone number" %>
 		<img src="../assets/question_mark.png">
 		<br/>
-		<label class="comment">This will only be used if there are shipping questions</label>
+		<%= f.label :phoneNumber, "This will only be used if there are shipping questions",:class=>"comment" %>
 		<br/>
-		<input class="allInput" id="phone" type="text"></input>
+		<%= f.text_field :phoneNumber ,:class=>"allInput" ,:id => "phone"%>
 		<br/>
-		<label>Email address</label>
+		<%= f.label :email, "Email address" %>
 		<br/>
-		<label class="comment">We'll email you an order confirmation</label>
+		<%= f.label :email, "We'll email you an order confirmation",:class=>"comment" %>
 		<br/>
-		<input class="allInput" id="email" type="text"></input>
+		<%= f.text_field :email ,:class=>"allInput" ,:id => "email"%>
+		
+
 	</div>
+
 	<div id="navButtons">
 		<label class="fontRightLabels">How do you like our new checkout?</label>
 		<br/>
@@ -63,7 +66,10 @@
 		</div>
 		<label class="someLbl">Continue to review your order</label>
 		<br/>
-		<%= link_to image_tag("Continue.png", :class=>'navButtons', :id=>'contBtn',:action=>'saveAndGo')%>
+		<%= f.submit '', :class=>"contBtn"%>
 	</div>
+
+	<% end %>
 	</div>
 </body>
+

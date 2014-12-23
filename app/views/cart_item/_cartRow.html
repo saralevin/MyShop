@@ -1,0 +1,21 @@
+<tr id="productItemInCart">
+	<td id="description">
+		<img id="imgOfProduct" src= <%= (Product.find_by code: productInCart.productCode).thumbnail %>/>
+		<label id="descriptionOfProd"><%= (Product.find_by code: productInCart.productCode).description %></label>
+		<br/>
+		<label id="codeOfProduct"> <%= (productInCart.productCode).to_s %> </label>
+	</td>
+	<input type="hidden" class="code" value="<%= productInCart.productCode%>" />
+	<td id="quantity">
+		<%= select_tag "chooseQuantity", options_for_select((1..50),productInCart.quantity) ,:onchange => "changeQuantity(#{productInCart.productCode})"%>	
+	</td>
+	<td id="price">
+	<label id="priceLbl"><span>ש"ח</span><%= calcPriceItem(productInCart.productCode,productInCart.quantity)%></label>
+	</td>
+	<td id="removeBtn">
+	
+	<button id="removeButton" style="background: url('../assets/x.png') no-repeat ;height: 24px;" onclick="removeProduct(<%="'"+ productInCart.productCode+"'" %>)"></button>
+	</td>
+</tr>
+
+

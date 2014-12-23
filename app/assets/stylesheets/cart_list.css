@@ -1,5 +1,5 @@
 #cartBody{
-	width: 685px;
+	width: 695px;
 	font-family: sans-serif;
 	margin-left: 20px;
 	font-size: 10px;
@@ -15,7 +15,9 @@ table, th, tr{
 }
 td{
 	border-right:  1px solid black;
+	border-bottom:  1px solid black;
 }
+
 #left{
 	float: left;
 	width: 476px;
@@ -57,10 +59,11 @@ td{
 .descriptionFont{
 	font-size: 9px;
 	font-weight: bold;
-	background-color: lightgrey;
+	background-color: #E3E3E3;
 }
 .total{
 	font-weight: bold;
+	font-size: 12px;
 }
 #chooseQuantity{
 	width: 46px;
@@ -86,4 +89,30 @@ td{
 	height: 16px;
 	margin-left: 20px;
 	margin-right: 20px;
+	
+}
+#removeButton{
+	border: 0px;
+	box-shadow: 0px;
+}
+#imgOfProduct{
+	width:60px;
+	float: left;
+	margin-right: 12px;
+}
+#description{
+	width: 265px;
+	padding: 12px 6px;
+}
+#codeOfProduct{
+	padding-top: 20px;
+}
+#descriptionOfProd{
+	font-weight: bold;
+}
+#productItemInCart{
+	border:1px solid gray;
+}
+.code{
+	
 }

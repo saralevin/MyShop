@@ -1,31 +1,68 @@
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="products.css.scss" />
 
-<form id="frmChooseProduct"> 
-<div id="DvImgProduct">
- 
-<%= image_tag(@product.thumbnail,:width => 305, :height => 460) %>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+  	var amount=0
 
-</div>
+   <% @carts.each do |cart| %>
+   		if ( <%= cart.productCode %> == <%= @product.code %>)
+			amount += <%= cart.quantity %>
+	<% end %>
 
-<label class="DscPrcSh" id="lblDescSh"> <%= @product.description %> </label>
-<label class="DscPrcSh" id="lblPrcSh"> ש"ח <%= @product.price %> </label>
-
-<div id="DvAcountSh">
-<label> Quantity:</label>
-<input type="text" name="fname" id="ddd">
-</div>
-
-<div id="btnAddTo">
-<%= link_to image_tag("AddTo.png"), url_for({:controller=>CartItem :action =>list}) %>
-</div>	
-
-<div id="sss">
-<a href=""> How many bought from me?	</a>	  
-</div>
-
-
- 
+  	$("#DvAmountPr").text( $("#DvAmountPr").text() + " " + amount);
+  	$("button").hide();
+  	$("#DvAmountPr").show(); 
+  });
+});
+</script>
+</head>
 
 
-</form>
+<body id="frmChooseProduct">
+	<div id="DvImgProduct">
+	 
+	<%= image_tag(@product.thumbnail,:width => 305, :height => 460) %>
+
+	</div>
+
+	<label class="DscPrcSh" id="lblDescSh"> <%= @product.description %> </label>
+	<label class="DscPrcSh" id="lblPrcSh"> ש"ח <%= @product.price %> </label>
+
+	<div id="DvAcountSh">
+	<label> Quantity:</label>
+	<input type="text" name="fname" id="ddd">
+	</div>
 
 
+
+
+	<div id="btnAddTo">
+	<%= link_to image_tag("AddTo.png"), url_for({:action =>'insertCard' ,  }) %>
+	</div>	
+
+
+
+
+
+
+
+
+
+	<button>How many bought from me?</button>
+	
+	<div id="DvAmountPr">
+       bought from me: 
+	</div>
+<br/>
+
+
+
+
+</body>
+
+</html>
+	

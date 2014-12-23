@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
   get 'cart_item/list'
-  
-
+  get 'cart_item/removeProduct'
+  get 'cart_item/changeQuantity'
   get 'cart_item/shipping'
-  get 'cart_item/insertIn'
-  
-   get 'products/index'
+  post 'user/saveAndGo'
+
+  get 'products/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,6 +18,16 @@ Rails.application.routes.draw do
   resources :products
   resources :users
   resources :carts
+
+  resources :users
+
+  resources :carts
+
+  resources :cart_items do
+      # member do
+      #   post 'removeProduct'
+      # end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

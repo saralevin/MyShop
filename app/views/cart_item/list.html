@@ -3,7 +3,7 @@
 </head>
 <body id="cartBody">
 <div id="left">
-<h1>SHOPPING BAG</h1>
+	<h1>SHOPPING BAG</h1>
 	<table id="cartTable">
 		<tr class="descriptionFont">
 			<td>Item Information</td>
@@ -24,15 +24,57 @@
 			<span class="total">TOTAL:</span> 
 		</div>
 		<div class="divsInTotal" id="sumNumbers">
-			<label id="subTotal_number"></label>
-			<label id="ShippingCharge_number"></label>
-			<label class="total" id="total_number"></label>
+			<span>ש"ח</span>
+			<label id="subTotal_number"> <%= calcSubTotal %></label>
+			<br/>
+			
+			<label id="ShippingCharge_number">
+			<% if calcSubTotal<75 %>
+				15
+			<% else%>
+				0
+			<%end%>
+			</label>
+			<span>ש"ח</span>
+			<br/>
+			
+			<label class="total" id="total_number">
+			<% if calcSubTotal<75 %>
+				<% shipp=15%>
+			<% else%>
+				<% shipp=0%>
+			<%end%>
+			<%= calcSubTotal+shipp %>
+			</label>
+			<span>ש"ח</span>
 		</div>
 	</div>
 </div>
 <div id="right">
-	<%= link_to image_tag("GoTo.png", :class=>'navButtons')%>
+	<%= link_to image_tag("GoTo.png"), :class=>'navButtons', :controller => 'cart_item',:action => 'shipping'%>
 	<br/>
-	<%= link_to image_tag("Cont.png", :class=>'navButtons')%>
+	<%= link_to image_tag("Cont.png"), :class=>'navButtons', :controller => 'products',:action => 'index'%>
 </div>
 </body>
+
+<script type="text/javascript">
+	function changeQuantity(code){
+		alert(code);
+		var productCode =code;
+		var selected = $("#chooseQuantity").find('option:selected').val()
+		$.ajax({
+	      url: "/cart_item/changeQuantity",
+	      data: {selectbox: selected,productCode: productCode },
+	     
+    	});
+	};
+	function removeProduct(productCode){
+		$.ajax({
+	      url: "/cart_item/removeProduct",
+	      data: {productCode: productCode },
+	      success: function(){ alert("The product has removed"); },
+	      error: function() {  alert("error");}
+    	});
+	};
+</script>
+
