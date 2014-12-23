@@ -1,39 +1,52 @@
 class ProductsController < ApplicationController
 
 
-def new
-	session[:MyId] = params[:id]
-	@product = Product.find(session[:MyId] )	
-end
-
-
 def show
-	@carts = Cart.all
-	@product = Product.find( params[:id] )	
+  @new_item = CartItem.new
+	@product = Product.find( params[:id] )	 
 end
+
+
+def amountProduct
+  @result = CartItem.where(productCode: params[:code] ).sum(:quantity)
+ 
+  respond_to do |format|
+    format.json  { render :json => @result.to_s }
+  end
+end
+
 
 def index
-  @products = Product.all
 end
 
 
-def insertCard
+def insertItem
+  @item = CartItem.new(item_params)
+  @item.totalSum = @item.totalSum.to_i * @item.quantity.to_i
 
-  @carts = Cart.new(cart_params)
- 
-  @carts.save
+  if !@item.valid?
+     @products = Product.all
+     render 'index'
+  else
+    if @item.save
+      render 'cart_item/list'
+    else
+      render 'show'
+    end
+  end
+
 end
- 
+
 
 
 private
 
-  def cart_params
-    params.require(:carts).permit(:userId, :productCode, :quantity, :totalSum)
+  def item_params
+    params.require(:cart_item).permit(:cartId, :productCode, :quantity, :totalSum)
   end
- 
-
-
 
 
 end
+
+
+

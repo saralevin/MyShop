@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 gem 'mysql'
 # gem 'prototype-rails'
 # require 'prototype-rails'
+
+gem 'thin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,24 +1,7 @@
 <html>
 <head>
- <link rel="stylesheet" type="text/css" href="products.css.scss" />
+	<link rel="stylesheet" type="text/css" href="products.css.scss" />
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-  	var amount=0
-
-   <% @carts.each do |cart| %>
-   		if ( <%= cart.productCode %> == <%= @product.code %>)
-			amount += <%= cart.quantity %>
-	<% end %>
-
-  	$("#DvAmountPr").text( $("#DvAmountPr").text() + " " + amount);
-  	$("button").hide();
-  	$("#DvAmountPr").show(); 
-  });
-});
-</script>
 </head>
 
 
@@ -32,37 +15,45 @@ $(document).ready(function(){
 	<label class="DscPrcSh" id="lblDescSh"> <%= @product.description %> </label>
 	<label class="DscPrcSh" id="lblPrcSh"> ש"ח <%= @product.price %> </label>
 
+	<%= form_for @new_item, url: {action: "insertItem"} do |f| %>
+
+	<%= f.hidden_field :cartId, :value => session[:idCart] %>
+	<%= f.hidden_field :productCode, :value =>  @product.code %>
+
 	<div id="DvAcountSh">
 	<label> Quantity:</label>
-	<input type="text" name="fname" id="ddd">
+	<%= f.number_field :quantity, :min => 0 %>
 	</div>
+	<%= f.hidden_field :totalSum, :value =>  @product.price %>
+    <%= f.submit "" ,  class: "addItem" %>
+	<% end %>
 
-
-
-
-	<div id="btnAddTo">
-	<%= link_to image_tag("AddTo.png"), url_for({:action =>'insertCard' ,  }) %>
-	</div>	
-
-
-
-
-
-
-
-
-
-	<button>How many bought from me?</button>
+	<button >How many bought from me?</button>
 	
 	<div id="DvAmountPr">
        bought from me: 
 	</div>
-<br/>
-
-
 
 
 </body>
 
 </html>
-	
+
+<script>
+
+$(document).ready(function(){
+  $("button").click(function(){
+	   $.ajax({
+			url: "/products/amountProduct",
+			dataType : 'json',
+			data: { "code": <%= @product.code %> },
+			success: function (result) {
+			 	$("#DvAmountPr").text( $("#DvAmountPr").text() + result );
+				$("button").hide();
+			    $("#DvAmountPr").show(); 
+		     }
+	    });
+  });
+});
+
+</script>
