@@ -1,0 +1,17 @@
+<h1>Show Products</h1>
+
+<%= form_for :product, url: product_path do |p| %>
+<%@Quantity=0%>
+<table>
+	<tr>
+		<td>  <%=image_tag(@product.thumbnail)%></td>
+		<td><strong><%=@product.description%></strong></td>
+		<td> <strong><%=@product.price%></strong>	</td>
+	</tr>
+     <tr>
+      
+     </tr>
+</table>
+<%end%>
+
+
