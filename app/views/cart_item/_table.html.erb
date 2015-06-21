@@ -1,0 +1,36 @@
+<table border="1" class="tbl">
+	<tr>
+		<th>Item Information</th>
+		<th>Qty</th>
+		<th>Price</th>
+		<th>Remove</th>
+	</tr>
+	<%@sum=0%>
+	<% @carts.each do |cart|%>
+		<% @sum=@sum+cart.price%>
+		<tr id="aaa">
+			<td class="td">
+				<img class="itemImg"<%= image_tag(cart.thumbnail)%>
+				<div class="itemDetails">
+					<strong><%= cart.description%></strong><br />
+					<%= cart.code%>
+				</div>
+			</td>
+			<td >
+				<input type=number value="1" width="">
+			</td>
+			<td>
+				<div>
+					<%= cart.price%>
+				</div>
+			</td>
+			<td >
+				<%= image_tag("imagesRed.png",size:"15",:class => "remove")%>
+			</td>
+		</tr>
+	<%end%>
+	<tr>
+		<td class="total" width="100px" colspan="2" id="totalTitle">TOTAL:</td>
+		<td class="total" width="100px" colspan="2"><%=@sum%></td>
+	</tr>
+</table>

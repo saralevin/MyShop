@@ -1,0 +1,7 @@
+<h1>SHOPPING BAG</h1>
+<div id="tableDiv"><%= render 'table'%></div>
+<%= link_to 'Destroy', cart_item_path(3),
+      method: :delete,
+      data: {confirm: 'Are you sure?'}%>
+
+

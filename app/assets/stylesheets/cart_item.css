@@ -1,0 +1,31 @@
+.itemDetails
+{
+	float:right;
+	padding-top: 30px;
+	padding-right: 40px;
+}
+.itemImg
+{
+	width:120px;
+	height:100px;
+	padding-left: 10px;
+}
+
+.td
+{
+	width:320px;
+	height: 120px;
+}
+.total
+{
+	width: 300px;
+}
+.tbl
+{
+	width:700px;
+	text-align:center;
+}
+#totalTitle
+{
+	padding-left: 300px;
+}
